@@ -51,6 +51,8 @@ const TokenTransactions = () => {
       setTransaction(getUniqueValuesAndSort(response.data, "transactionHash"));
       localStorage.setItem("transactions", JSON.stringify(response.data));
     } else {
+      setTransaction([]);
+      localStorage.clear();
       setError(response.error);
     }
     setloading(false);
@@ -73,6 +75,8 @@ const TokenTransactions = () => {
 
       localStorage.setItem("transactions", JSON.stringify(transactions));
     } else {
+      setTransaction([]);
+      localStorage.clear();
       setError(response.error);
     }
     setloading(false);

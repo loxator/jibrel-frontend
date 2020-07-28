@@ -47,6 +47,7 @@ const TokenTransactions = () => {
     if (response.error === null) {
       setTransaction(response.data);
     } else {
+      setTransaction([]);
       setError(response.error);
     }
     setloading(false);
